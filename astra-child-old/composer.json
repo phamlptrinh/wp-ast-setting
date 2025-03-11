@@ -1,0 +1,11 @@
+{
+    "require": {
+        "htmlburger/carbon-fields": "^3.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "GpcAstra\\Includes\\": "includes",
+            "GpcAstra\\Site\\": "site"
+        }
+    }
+}

@@ -1,0 +1,566 @@
+/**
+Theme Name: gpc-astra
+Author: GPC
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: gpc-astra
+Template: astra
+*/
+
+:root {
+    /*---------- Astra---------- */
+    /* Map màu của Kandence bolock với màu của Astra */
+    --global-palette5: var(--ast-global-color-2);
+    --global-palette-btn-bg: var(--ast-global-color-8);
+    --global-palette-btn-bg-hover: #0188cc;
+    --global-content-edge-padding: 20px;
+}
+
+/*---------- Ultilities ---------- */
+.d-none { display: none }
+.d-inline-block { display: inline-block }
+.text-center { text-align: center }
+.order-1 { order: 1 }
+.order-2 { order: 2 }
+
+@media (min-width: 992px) {
+    .d-lg-block { display: block !important; }
+}
+
+@media (min-width: 768px) {
+    .order-md-1 { order: 1; }
+    .order-md-2 { order: 2; }
+}
+
+.highlight-strong strong {
+    color: #e60808;
+}
+
+
+/*=============================================
+=            Grid            =
+=============================================*/
+.grid {
+    --columns: 1;
+    display: grid;
+    grid-template-columns: repeat(var(--columns), 1fr);
+}
+
+.grid-cols-2 { --columns: 2; }
+.grid-cols-3 { --columns: 3; }
+.grid-cols-4 { --columns: 4; }
+.grid-cols-5 { --columns: 5; }
+.grid-cols-6 { --columns: 6; }
+
+@media(max-width: 767px) {
+    .grid-cols-2 { --columns: 1; }
+    .grid-cols-3 { --columns: 1; }
+    .grid-cols-4 { --columns: 1; }
+    .grid-cols-5 { --columns: 1; }
+    .grid-cols-6 { --columns: 1; }
+}
+
+/*=============================================
+=            Kadence            =
+=============================================*/
+
+/*---------- Fix theme Astra ---------- */
+/* Fix row layout inherit content width ở page Astra full width */
+.ast-page-builder-template .entry-content[data-ast-blocks-layout] .wp-block-kadence-rowlayout .kt-row-column-wrap.kb-theme-content-width {
+    max-width: var(--wp--custom--ast-container-width);
+}
+
+/* thêm padding cho row layout cấp 1 max width content theo theme */
+.entry-content > .kb-row-layout-wrap > .kt-row-column-wrap.kb-theme-content-width {
+    padding-left: var(--global-content-edge-padding);
+    padding-right: var(--global-content-edge-padding);
+}
+
+footer > .kt-row-column-wrap {
+    padding-left: var(--global-content-edge-padding);
+    padding-right: var(--global-content-edge-padding);
+}
+
+/* gallery image height theo hinh (image ratio inherit) */
+.kb-gallery-ul.kb-gallery-type-slider .kadence-blocks-gallery-item .kadence-blocks-gallery-item-inner .kb-gallery-image-contain.kadence-blocks-gallery-intrinsic.kb-gallery-image-ratio-inherit {
+    padding-bottom: unset;
+    height: 100%;
+}
+
+.kb-gallery-ul .kadence-blocks-gallery-item .kadence-blocks-gallery-item-inner figure .kb-gallery-image-contain.kadence-blocks-gallery-intrinsic.kb-gallery-image-ratio-inherit img {
+    position: relative;
+}
+
+.kb-gallery-ul.kb-gallery-type-carousel .kadence-blocks-gallery-item .kadence-blocks-gallery-item-inner .kb-gallery-image-contain.kadence-blocks-gallery-intrinsic.kb-gallery-image-ratio-inherit {
+    padding-bottom: unset;
+    height: 100%;
+}
+
+/*---------- Kadence slider arrows ---------- */
+.wp-block-kadence-advancedgallery .kt-blocks-carousel {
+    overflow: visible;
+}
+
+.kb-splide .splide__arrow {
+    --splide-nav-color: rgba(17, 28, 99, 0.5);
+    --splide-nav-background: #fff;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    opacity: .5;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.wp-block-kadence-advancedgallery .kt-blocks-carousel .splide__arrow--prev {
+    transform: translateY(-50%);
+}
+
+.wp-block-kadence-advancedgallery .kt-blocks-carousel .splide__arrow--next {
+    transform: translateY(-50%);
+}
+
+.wp-block-kadence-advancedgallery .kt-blocks-carousel .splide__arrow--prev { left: 10px; }
+
+.wp-block-kadence-advancedgallery .kt-blocks-carousel .splide__arrow--next { right: 10px; }
+
+@media (max-width: 480px)
+{
+	.kb-splide .splide__arrow { width: 30px; height: 30px; }
+}
+
+/* post carousel arrows */
+@media(min-width: 1024px) {
+    .kb-splide .splide__arrow--prev {
+        transform: translateX(calc(-100% - 10px));
+        left: 0;
+    }
+
+    .kb-splide .splide__arrow--next {
+        transform: translateX(calc(100% + 10px));
+        right: 0;
+    }
+}
+
+/* Dot inside */
+
+.has-dot-inside.wp-block-kadence-advancedgallery .kt-blocks-carousel-init[data-slider-dots=true] {
+    margin-bottom: 0;
+}
+
+.has-dot-inside.wp-block-kadence-advancedgallery .kb-splide .splide__pagination {
+    bottom: 20px;
+}
+
+/*---------- Button default ---------- */
+.kb-button:not(.kb-btn-global-inherit) {
+    padding: 12px 24px;
+    font-size: 1rem;
+}
+
+/*---------- Kadence info box ---------- */
+.wp-block-kadence-infobox .kt-blocks-info-box-media-container .kadence-info-box-image-inner-intrisic-container .kadence-info-box-image-intrisic {
+    padding-bottom: 0;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+}
+
+.wp-block-group.equal-height .kt-blocks-info-box-link-wrap {
+    height: 100%;
+}
+
+/* Đặt chiều cao bằng nhau cho section flex row chứa info box */
+.wp-block-kadence-column.kb-section-dir-horizontal.equal-height > .kt-inside-inner-col {
+    align-items: stretch;
+}
+.wp-block-kadence-column.kb-section-dir-horizontal.equal-height > .kt-inside-inner-col > .wp-block-kadence-infobox {
+    height: auto;
+}
+.wp-block-kadence-column.kb-section-dir-horizontal.equal-height > .kt-inside-inner-col > .wp-block-kadence-infobox > .kt-blocks-info-box-link-wrap {
+    height: 100%;
+}
+
+/*=============================================
+=            Layout            =
+=============================================*/
+.ast-right-sidebar #secondary {
+    padding-left: 0;
+}
+
+@media (min-width: 922px) {
+    .ast-right-sidebar #primary {
+        border-right: none;
+        padding-right: 1rem;
+    }
+
+    .ast-right-sidebar #secondary {
+        border-left: none;
+        padding-left: 1rem;
+    }
+}
+
+/*=============================================
+=            Widget            =
+=============================================*/
+
+.secondary.widget-area .widget {
+    background: #f5f9ff;
+    padding: 1.5rem;
+    border-radius: 4px;
+}
+
+.secondary.widget-area .widget-title {
+    margin-bottom: 40px;
+    font-size: 24px;
+    position: relative;
+}
+
+.secondary.widget-area .widget-title:before {
+    position: absolute;
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    bottom: -16px;
+    border-radius: 2px;
+    background: #0071ef;
+}
+
+/*---------- Widget post ---------- */
+.widget .ast-grid-common-col {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.widget .ast-grid-common-col.hentry {
+    margin-bottom: 0;
+}
+
+/*=============================================
+=            Header            =
+=============================================*/
+.header-slogan {
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: bold;
+}
+
+.header-slogan-top {
+    color: var(--ast-global-color-0)
+}
+
+.header-slogan-bottom {
+    color: var(--ast-global-color-1)
+}
+
+.ast-logo-title-inline .ast-site-identity { padding: 0 }
+
+.header-button-call {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 20px;
+    color: #fff !important;
+    background-color: #e60808;
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+/* Menu */
+.main-header-menu > .menu-item > .menu-link {
+    text-transform: uppercase;
+}
+
+/*=============================================
+=            Footer            =
+=============================================*/
+.wp-classic-menu-block>.menu li {
+    display: block;
+    margin-bottom: 10px;
+}
+
+/*=============================================
+=            Homepage            =
+=============================================*/
+
+/*---------- Section title ---------- */
+.wp-block-kadence-advancedheading.is-style-section-title,
+.wp-block-kadence-advancedheading.is-style-section-title-border-left {
+    font-size: 34px;
+    font-weight: 600;
+    color: var(--ast-global-color-8);
+    position: relative;
+    padding-bottom: 8px;
+}
+
+.wp-block-kadence-advancedheading.is-style-section-title::after,
+.wp-block-kadence-advancedheading.is-style-section-title-border-left::after {
+    position: absolute;
+    content: "";
+    display: block;
+    width: 100px;
+    height: 4px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+    background: var(--ast-global-color-8);
+}
+
+.wp-block-kadence-advancedheading.is-style-section-title-border-left::after {
+    left: 0;
+    transform: translateX(0);
+}
+
+/*---------- Phương thức vận chuyển ---------- */
+.checkerboard-info-boxes.wp-block-kadence-column {
+    --group-grid-columns: 1;
+    --grid-columns: 1;
+}
+
+.checkerboard-info-boxes.wp-block-kadence-column > .kt-inside-inner-col {
+    display: grid;
+    grid-template-columns: repeat(var(--grid-columns), 1fr);
+}
+
+.checkerboard-info-boxes.wp-block-kadence-column .wp-block-group {
+    display: grid;
+    grid-template-columns: repeat(var(--group-grid-columns), 1fr);
+    gap: 0;
+    height: 100%;
+}
+
+.checkerboard-info-boxes.wp-block-kadence-column .wp-block-group > * {
+    height: 100%;
+    margin: 0;
+}
+
+.checkerboard-info-boxes .wp-block-kadence-infobox,
+.checkerboard-info-boxes .wp-block-kadence-infobox .kt-blocks-info-box-link-wrap,
+.checkerboard-info-boxes .wp-block-kadence-image,
+.checkerboard-info-boxes .wp-block-kadence-image img {
+    height: 100%;
+}
+
+.checkerboard-info-boxes .wp-block-kadence-infobox .kt-blocks-info-box-link-wrap {
+    padding: 30px;
+    place-content: center;
+}
+
+.checkerboard-info-boxes .wp-block-kadence-infobox .kt-blocks-info-box-media-container {
+    transition: all 0.3s ease-in-out;
+}
+
+.checkerboard-info-boxes .wp-block-kadence-infobox:hover .kt-blocks-info-box-media-container {
+    transform: translateY(-10px)
+}
+
+.checkerboard-info-boxes .wp-block-kadence-image img {
+    object-fit: cover;
+}
+
+.checkerboard-info-boxes .kt-blocks-info-box-title {
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 30px;
+    margin-bottom: 16px;
+    color: var(--ast-global-color-8);
+}
+
+.checkerboard-info-boxes .kt-blocks-info-box-text {
+    font-size: 15px;
+}
+
+@media (max-width: 767px) {
+    .checkerboard-info-boxes .wp-block-kadence-infobox {
+        order: 2;
+    }
+}
+
+@media (min-width: 768px) {
+    .checkerboard-info-boxes.wp-block-kadence-column {
+        --grid-columns: 1;
+        --group-grid-columns: 2;
+    }
+
+    .checkerboard-info-boxes .wp-block-group:nth-child(2n + 1) .wp-block-kadence-infobox {
+        order: 2;
+    }
+
+    .checkerboard-info-boxes .wp-block-group:nth-child(2n + 2) .wp-block-kadence-image {
+        order: 2;
+    }
+}
+
+@media (min-width: 1024px) {
+    .checkerboard-info-boxes.wp-block-kadence-column {
+        --grid-columns: 2;
+        --group-grid-columns: 2;
+    }
+
+    .checkerboard-info-boxes .wp-block-group:nth-child(2n + 1) .wp-block-kadence-infobox,
+    .checkerboard-info-boxes .wp-block-group:nth-child(2n + 2) .wp-block-kadence-image {
+        order: unset;
+    }
+}
+
+/*---------- nhận xét ---------- */
+.carousel-nhan-xet .kb-gallery-image-contain {
+    border-radius: 20px;
+    overflow: hidden;
+    border: 2px solid #bee2f8 !important;
+}
+
+/*---------- posts ---------- */
+.wp-block-kadence-postgrid.kt-post-grid-layout-carousel .kt-blocks-post-grid-item {
+    padding: 10px;
+    background: linear-gradient(89.37deg,rgba(255,255,255,.92) 16.06%,rgba(255,255,255,.74) 99.35%);
+    border-radius: 24px;
+    height: 100%;
+}
+
+.wp-block-kadence-postgrid.kt-post-grid-layout-carousel .kt-blocks-post-grid-item header {
+    background: transparent;
+}
+
+.wp-block-kadence-postgrid.kt-post-grid-layout-carousel .kadence-post-image-intrisic .kadence-post-image-inner-intrisic img {
+    border-radius: 8px;
+}
+
+/*=============================================
+=            Popup maker            =
+=============================================*/
+.wp-block-kadence-advanced-form.form-dang-ky-tu-van .kb-advanced-form {
+    gap: 10px;
+}
+
+.pum-container .form-dang-ky-tu-van .kb-submit-field {
+    justify-content: center;
+}
+
+.pum-container p:empty { margin: 0; }
+
+html.pum-open.pum-open-overlay.pum-open-scrollable body>:not([aria-modal=true]) {
+    padding-right: 0px !important;
+}
+
+html.pum-open.pum-open-overlay.pum-open-scrollable body>.gpc-floating-buttons,
+html.pum-open.pum-open-overlay.pum-open-scrollable body>#ast-scroll-top {
+    padding-right: 0 !important;
+}
+
+html.pum-open.pum-open-overlay.pum-open-scrollable body>.float-order {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    html.pum-open.pum-open-overlay.pum-open-scrollable body>:not([aria-modal=true]) {
+        padding-right: 17px !important;
+    }
+
+    html.pum-open.pum-open-overlay.pum-open-scrollable body>.gpc-floating-buttons,
+    html.pum-open.pum-open-overlay.pum-open-scrollable body>#ast-scroll-top {
+        padding-right: 0 !important;
+        transform: translateX(-17px);
+    }
+}
+
+/*=============================================
+=            Blog            =
+=============================================*/
+.post-page-numbers.current .page-link, .ast-pagination .page-numbers.current { color: #fff }
+
+.blog .ast-article-post + .ast-article-post {
+    padding-top: 24px;
+    border-top: 1px solid #e8e8e8;
+}
+
+.ast-blog-layout-5-grid .blog-layout-5 {
+    flex-wrap: nowrap;
+}
+
+.ast-blog-layout-5-grid .ast-blog-featured-section {
+    width: 40%;
+}
+
+@media(max-width: 767px) {
+    .ast-blog-layout-5-grid .blog-layout-5 {
+        flex-wrap: wrap;
+    }
+    .ast-blog-layout-5-grid .ast-blog-featured-section {
+        width: 100%;
+    }
+    .ast-blog-layout-5-grid .post-content {
+        padding-left: 0;
+    }
+}
+
+.sidebar-main .hentry {
+    margin-bottom: 0;
+}
+.sidebar-main .ast-article-post {
+    font-weight: normal;
+}
+.sidebar-main .entry-title a {
+    font-weight: inherit;
+    line-height: inherit;
+}
+
+/*=============================================
+=            Trang gửi hàng Mỹ/Úc/Canada            =
+=============================================*/
+/*---------- CTA Box ---------- */
+.cta-box {
+    --image-width: 100px;
+    --inner-padding: 0 10px 0;
+    --inner-col-gap: 10px;
+    --heading-font-size: 16px;
+    --button-font-size: 16px;
+
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.cta-box .kt-row-column-wrap {
+    border: 3px solid var(--ast-global-color-8);
+    border-radius: 16px;
+    max-width: min(500px, 100%) !important;
+    padding: var(--inner-padding) !important;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.cta-box .kt-inside-inner-col {
+    gap: var(--inner-col-gap);
+}
+
+.cta-box .wp-block-kadence-image {
+    flex-shrink: 0;
+    max-width: var(--image-width);
+}
+
+.cta-box .wp-block-group {
+    flex-grow: 0;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.cta-box .wp-block-kadence-advancedheading {
+    font-size: var(--heading-font-size);
+    line-height: 18px;
+    margin: 0;
+}
+
+.cta-box .kb-button {
+    padding: .5rem;
+    font-size: var(--button-font-size);
+}
+
+@media (max-width: 767px) {
+    .cta-box {
+        --image-width: 70px;
+        --inner-padding: 0 0 0 0;
+        --inner-col-gap: 0;
+        --heading-font-size: 14px;
+        --button-font-size: 12px;
+    }
+}

@@ -1,0 +1,90 @@
+.edit-post-layout__metaboxes .form-field,
+.custom-field-panel .form-field {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.edit-post-layout__metaboxes .form-field label,
+.custom-field-panel .form-field label {
+    flex: 0 0 170px;
+}
+
+.edit-post-layout__metaboxes .form-field .form-control,
+.custom-field-panel .form-field .form-control {
+    flex: 0 0 calc(100% - 170px);
+}
+
+.edit-post-layout__metaboxes .form-field .form-control .description,
+.custom-field-panel .form-field .form-control .description {
+    display: block;
+    color: #777;
+    font-style: italic;
+    margin-top: 8px;
+}
+
+.gpc-field-gallery-selected {
+    display: flex;
+    margin: 0;
+}
+
+.gpc-field-gallery .attachment {
+    width: 12.5%;
+    max-width: 150px;
+    min-width: 100px;
+    position: relative;
+}
+
+.gpc-field-gallery__preview {
+    height: 100%;
+}
+
+.gpc-field-gallery__preview img {
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 1/1;
+}
+
+.gpc-checkbox-group {
+    margin: 0;
+}
+
+.gpc-radio-group {
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.gpc-field-autocomplete-selected {
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 95%;
+}
+
+.gpc-field-autocomplete-selected:empty {
+    display: none;
+}
+
+.gpc-field-autocomplete-selected__item {
+    padding: 8px 12px;
+    cursor: grab;
+    position: relative;
+}
+.gpc-field-autocomplete-selected__item:last-child {
+    margin-bottom: 0;
+}
+.gpc-field-autocomplete-selected__remove {
+    position: absolute;
+    right: 10px;
+}
+
+.form-table span.description {
+    display: block;
+    margin-top: 8px;
+    font-style: italic;
+}
+
+span.description {
+    color: #646970;
+    font-size: 13px;
+}

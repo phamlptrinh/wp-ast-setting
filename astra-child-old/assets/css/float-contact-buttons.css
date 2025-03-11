@@ -1,0 +1,92 @@
+.gpc-floating-buttons {
+    text-align: center;
+    z-index: 999
+}
+
+.button-left {
+    width: 45px;
+    position: fixed;
+    bottom: 80px;
+    left: 20px;
+}
+.button-right {
+    width: 45px;
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+}
+.button-left > a, .button-right > a {
+    margin: 0 !important;
+}
+
+.gpc-floating-buttons div a {
+    display: block;
+    line-height: 45px;
+    text-indent: -9999px;
+    margin: 14px 0;
+    background: #40A578 center no-repeat;
+    background-size: 70%;
+    border-radius: 50%;
+    box-shadow: 0 3px 10px #888;
+    /* animation: gpc-effect-shake 1.5s infinite ease-in-out; */
+}
+
+.gpc-floating-buttons div:first-child a {
+    margin-top: 0
+}
+
+.gpc-floating-buttons div:last-of-type a {
+    margin-bottom: 0
+}
+
+@media (min-width: 992px) {
+    .gpc-floating-buttons.has-effect-shake-desktop .gpc-floating-buttons__item {
+        animation: gpc-effect-shake 1.5s infinite ease-in-out;
+    }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    .gpc-floating-buttons.has-effect-shake-tablet .gpc-floating-buttons__item {
+        animation: gpc-effect-shake 1.5s infinite ease-in-out;
+    }
+}
+@media (max-width: 767px) {
+    .gpc-floating-buttons.has-effect-shake-mobile .gpc-floating-buttons__item {
+        animation: gpc-effect-shake 1.5s infinite ease-in-out;
+    }
+}
+
+@media only screen and (max-width:588px) {
+    .gpc-floating-buttons.mobile-fixed {
+        display: flex;
+        bottom: 0;
+        width: 100%;
+        left: 0;
+        right: auto;
+        justify-content: space-evenly;
+    }
+
+    .gpc-floating-buttons.mobile-fixed > * {
+        width: auto;
+        position: unset;
+        flex-grow: 1;
+    }
+
+    .mobile-fixed .another-side-container {display: flex;}
+    .mobile-fixed .another-side-container > .gpc-floating-buttons__item{width: 100%;}
+
+    .gpc-floating-buttons.mobile-fixed > * a {
+        background-size: contain;
+        border-radius: 0;
+        margin: 0;
+    }
+}
+
+@keyframes gpc-effect-shake {
+    0% { transform: rotate(0) scale(1) skew(1deg) }
+    10% { transform: rotate(-25deg) scale(1) skew(1deg) }
+    15% { transform: rotate(25deg) scale(1) skew(1deg) }
+    20% { transform: rotate(-25deg) scale(1) skew(1deg) }
+    30% { transform: rotate(25deg) scale(1) skew(1deg) }
+    40% { transform: rotate(-25deg) scale(1) skew(1deg) }
+    50% { transform: rotate(0) scale(1) skew(1deg) }
+}

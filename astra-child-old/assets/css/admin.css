@@ -1,0 +1,30 @@
+
+/*=============================================
+=            Carbon fields            =
+=============================================*/
+:root {
+    --cf-field-head-width: 170px;
+}
+
+.postbox .cf-field {
+    display: flex;
+    flex-wrap: wrap;
+}
+.postbox .cf-field:not(.cf-rich-text):not(.cf-html) .cf-field__head {
+    flex: 0 0 var(--cf-field-head-width);
+}
+.postbox .cf-field:not(.cf-rich-text):not(.cf-html) .cf-field__body {
+    flex: 0 0 calc(100% - var(--cf-field-head-width))
+}
+.postbox .cf-field .cf-field__help {
+    flex: 0 0 100%;
+    margin-left: var(--cf-field-head-width);
+}
+
+
+.cf-field.cf-hidden {
+    display: none;
+}
+.complex-static .cf-complex__group-action {
+    display: none;
+}
